@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <device Port="COM1" BaudRate="115200"/>
+
+  <pages>
+    <export Url="http://isupervise.ru/crontab/reportoffline.php" ArgumentName="downfile"/>
+
+    <auth Url="http://isupervise.ru/crontab/password.php" ArgumentName="password"/>
+     <!--code: echo 'pong';-->
+    <ping Url="http://isupervise.ru/crontab/ping.php"/>
+    <log Url="http://isupervise.ru/crontab/logexport.php" ArgumentName="downfile"/>
+   </pages>
+
+  <app AutoClear="True" MaxPorts="12"/>
+  
+  <proxy>
+    <is_use>false</is_use>
+    <address>127.0.0.1</address>
+    <port>8888</port>
+    <is_auth>false</is_auth>
+    <username></username>
+    <password></password>
+  </proxy>
+</config>
