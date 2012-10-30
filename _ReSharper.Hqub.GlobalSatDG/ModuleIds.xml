@@ -1,0 +1,22 @@
+<Modules>
+  <Module PersistentId="AD716607-5FF1-422E-9373-5B215780A58B" ModuleId="Hqub.GlobalSat" />
+  <Module PersistentId="08930809-464B-4B67-A548-E23C49BEEB56" ModuleId="Hqub.GlobalSatDG.Host" />
+  <Module PersistentId="93325198-DE08-4994-8319-CF4F90939A0F" ModuleId="Hqub.GlobalSatDG.Host.Console" />
+  <Module PersistentId="52613E14-45A0-4BD5-8F94-21B309514DD6" ModuleId="Hqub.PostRequestUtils" />
+  <Module PersistentId="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="mscorlib" />
+  <Module PersistentId="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System" />
+  <Module PersistentId="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data" />
+  <Module PersistentId="System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Xml" />
+  <Module PersistentId="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c" ModuleId="NLog" />
+  <Module PersistentId="System.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Deployment" />
+  <Module PersistentId="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Drawing" />
+  <Module PersistentId="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Windows.Forms" />
+  <Module PersistentId="Hqub.GlobalSat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="Hqub.GlobalSat_1" />
+  <Module PersistentId="System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Configuration" />
+  <Module PersistentId="System.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Security" />
+  <Module PersistentId="System.Data.SqlXml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data.SqlXml" />
+  <Module PersistentId="Hqub.PostRequestUtils, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="Hqub.PostRequestUtils_1" />
+  <Module PersistentId="Accessibility, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="Accessibility" />
+  <Module PersistentId="System.Runtime.Serialization.Formatters.Soap, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Runtime.Serialization.Formatters.Soap" />
+  <Module PersistentId="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Web.Services" />
+</Modules>

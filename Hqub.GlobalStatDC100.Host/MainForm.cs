@@ -615,6 +615,7 @@ namespace Hqub.GlobalStatDC100.Host
             {
                 ConfigHelper.BaudRate = baudRate;
                 _device.SetPort(ConfigHelper.Port, ConfigHelper.BaudRate);
+                _device.SetBaudRate(ConfigHelper.BaudRate);
             }
         }
 

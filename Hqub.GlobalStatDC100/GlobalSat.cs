@@ -47,6 +47,11 @@ namespace Hqub.GlobalSat
             BaudRate = baudRate;
         }
 
+        public void SetBaudRate(int baudRate)
+        {
+            BaudRate = baudRate;
+        }
+
         private void SafetyWrite(byte[] buffer, int offset, int count)
         {
             try

@@ -9,7 +9,7 @@ namespace Hqub.GlobalStatDC100.Host.Console
     {
         static void Main(string[] args)
         {
-            var globalStatDc100 = new GlobalSat.GlobalSat("COM3", 230400);
+            var globalStatDc100 = new GlobalSat.GlobalSat("COM6", 230400);
             globalStatDc100.Logger.EventLog += (message, messageLevel) =>
                                                    {
                                                        switch (messageLevel)
