@@ -23,6 +23,7 @@ namespace Hqub.PostRequestUtils
             httpWebRequest2.Method = "POST";
             httpWebRequest2.KeepAlive = true;
             httpWebRequest2.Credentials = System.Net.CredentialCache.DefaultCredentials;
+            httpWebRequest2.Timeout = 30*60*1000;
 
             Stream memStream = new MemoryStream();
 
@@ -58,7 +59,6 @@ namespace Hqub.PostRequestUtils
             while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) != 0)
             {
                 memStream.Write(buffer, 0, bytesRead);
-
             }
 
             memStream.Write(boundarybytes, 0, boundarybytes.Length);
@@ -77,7 +77,7 @@ namespace Hqub.PostRequestUtils
             requestStream.Close();
 
             var webResponse2 = httpWebRequest2.GetResponse();
-
+            
             var stream2 = webResponse2.GetResponseStream();
             var reader2 = new StreamReader(stream2, Encoding.Default);
             var response = reader2.ReadToEnd();

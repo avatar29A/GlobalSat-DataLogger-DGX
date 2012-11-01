@@ -172,7 +172,7 @@ namespace Hqub.GlobalStatDC100.Host
                                        SimpleLogger.MessageLevel.Information);
 
                     // Если сервер обработал запрос, то очищаем память устройства:
-					if (resp[1].ToLower() == "true")
+                    if (resp[0].Trim().ToLower() == "true")
                     {
                         // Очищаем память устройства.
                         if (cbAutoClear.Checked)

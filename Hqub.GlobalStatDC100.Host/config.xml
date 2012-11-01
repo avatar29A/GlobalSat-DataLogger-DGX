@@ -6,10 +6,10 @@
     <export Url="http://isupervise.ru/crontab/reportoffline.php" ArgumentName="downfile"/>
 
     <auth Url="http://isupervise.ru/crontab/password.php" ArgumentName="password"/>
-     <!--code: echo 'pong';-->
+    <!--code: echo 'pong';-->
     <ping Url="http://isupervise.ru/crontab/ping.php"/>
     <log Url="http://isupervise.ru/crontab/logexport.php" ArgumentName="downfile"/>
-   </pages>
+  </pages>
 
   <app AutoClear="True" MaxPorts="12"/>
   
