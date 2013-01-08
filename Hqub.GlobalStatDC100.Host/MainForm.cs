@@ -86,7 +86,8 @@ namespace Hqub.GlobalStatDC100.Host
 
             //Отмечаем выбранный порт:
             SetPortCheckedValue(_device.PortName, true);
-            _device.Logger.Log(string.Format("Порт: {0}", _device.PortName), SimpleLogger.MessageLevel.Information);
+
+            LogPortNameChanged();
 
             toolStatusLabel.Text = Strings.CONNECT_TO_SERVER;
             
@@ -321,9 +322,12 @@ namespace Hqub.GlobalStatDC100.Host
 
             // Если не получилось извлечь список ком. портов из HKLM\Hardware\DeviceMap\SerialComm,
             // то составляем их искусственно:
-            if (portNames.Count == 0)
-                for (var i = 1; i <= ConfigHelper.MaxPorts; i++)
-                    portNames.Add(string.Format("COM{0}", i));
+//            if (portNames.Count == 0)
+//                for (var i = 1; i <= ConfigHelper.MaxPorts; i++)
+//                    portNames.Add(string.Format("COM{0}", i));
+
+            // Перед автообновлением порта, закроем текущий:
+            _device.Close();
 
             var tempDevice = new GlobalSat.GlobalSat(baudRate: ConfigHelper.BaudRate);
             try
@@ -345,17 +349,17 @@ namespace Hqub.GlobalStatDC100.Host
 
                 tempDevice.Close();
 
-                if (portFind)
+                if (!portFind)
                 {
-                    return tempDevice.PortName;
+                    AddItemToConsole("Устройство не найдено.", Color.Red);
+                    return ConfigHelper.Port;
                 }
 
-                AddItemToConsole("Устройство либо не подключено, либо настроено неверно.", Color.Red);
-                return ConfigHelper.Port;
+                return tempDevice.PortName;
             }
             catch
             {
-                AddItemToConsole("Устройство либо не подключено, либо настроено неверно.", Color.Red);
+//                AddItemToConsole("Устройство либо не подключено, либо настроено неверно.", Color.Red);
                 return ConfigHelper.Port;
             }
         }
@@ -600,7 +604,7 @@ namespace Hqub.GlobalStatDC100.Host
             SetPortCheckedValue(_device.PortName, true);
             _comPort = _device.PortName;
 
-            _device.Logger.Log(string.Format("Порт: {0}", _device.PortName), SimpleLogger.MessageLevel.Information);
+            LogPortNameChanged();
 
 
             Cursor = Cursors.Arrow;
@@ -622,6 +626,15 @@ namespace Hqub.GlobalStatDC100.Host
         private void cbAutoClear_CheckedChanged(object sender, EventArgs e)
         {
             ConfigHelper.AutoClear = cbAutoClear.Checked;
+        }
+
+        /// <summary>
+        /// Пишем в консоль номер порта, только если он изменился:
+        /// </summary>
+        private void LogPortNameChanged()
+        {
+
+            _device.Logger.Log(string.Format("Активный порт '{0}'.", _device.PortName), SimpleLogger.MessageLevel.Information);
         }
 
     }

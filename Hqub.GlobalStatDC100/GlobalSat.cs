@@ -73,8 +73,11 @@ namespace Hqub.GlobalSat
         /// <summary>
         /// Открываем порт для чтения данных
         /// </summary>
+        /// <tryCount>Кол-во попыток вызова методов Open при возникновении ошибки UnauthorizedAccessException.
+        /// Всего делается 3 попытки.
+        /// </tryCount>
         /// <returns></returns>
-        private bool Open()
+        private bool Open(int tryCount=0)
         {
             if (Port != null && Port.IsOpen)
             {
@@ -82,6 +85,7 @@ namespace Hqub.GlobalSat
             }
 
             Port = new SerialPort(PortName, BaudRate);
+           
             Port.DataBits = 8;
             Port.StopBits = StopBits.One;
             Port.Parity = Parity.None;
@@ -92,8 +96,13 @@ namespace Hqub.GlobalSat
             }
             catch (UnauthorizedAccessException ex)
             {
-                Logger.Log(string.Format("Ошибка. {0}", ex.Message), SimpleLogger.MessageLevel.Error);
-                return false;
+                Logger.Log(string.Format("Ошибка. {0} (попытка № {1}", ex.Message, tryCount + 1), SimpleLogger.MessageLevel.Error);
+                
+                if(tryCount == 3)
+                    return false;
+
+                Thread.Sleep(1300);
+                return Open(++tryCount);
             }
             catch (IOException ex)
             {
@@ -125,12 +134,14 @@ namespace Hqub.GlobalSat
                 if (Port != null)
                 {
                     Port.Close();
-                    Thread.Sleep(200);
+                    Thread.Sleep(300);
                 }
             }
             catch (Exception exception)
             {
+#if DEBUG
                 Logger.Log(string.Format("Port.Close; {0}\n{1}", exception.Message, exception.StackTrace), SimpleLogger.MessageLevel.Error);
+#endif
             }
         }
 

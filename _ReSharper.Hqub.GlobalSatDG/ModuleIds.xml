@@ -19,5 +19,5 @@
   <Module PersistentId="Accessibility, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="Accessibility" />
   <Module PersistentId="System.Runtime.Serialization.Formatters.Soap, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Runtime.Serialization.Formatters.Soap" />
   <Module PersistentId="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Web.Services" />
-  <Module PersistentId="Hqub.GlobalSat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="Hqub.GlobalSat_2" />
+  <Module PersistentId="08930809-464B-4B67-A548-E23C49BEEB56" ModuleId="Hqub.GlobalSatDG.Host_1" />
 </Modules>
